@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Picks | Premium Amazon Finds</title>
+  <style>
+    :root {
+      --white: #ffffff;
+      --gray: #f5f5f7;
+      --gray-2: #e9e9ee;
+      --dark: #0f1115;
+      --dark-2: #1d1d1f;
+      --text-soft: #6e6e73;
+      --accent: #0a84ff;
+      --accent-2: #6ea8ff;
+      --gold: #d4af37;
+      --glass: rgba(255, 255, 255, 0.58);
+      --glass-border: rgba(255, 255, 255, 0.55);
+      --shadow-sm: 0 12px 30px rgba(15, 17, 21, 0.08);
+      --shadow-md: 0 20px 50px rgba(15, 17, 21, 0.14);
+      --shadow-lg: 0 30px 80px rgba(15, 17, 21, 0.18);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1240px;
+    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Inter", "Segoe UI", sans-serif;
+  color: var(--dark-2);
+  background:
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.08), transparent 26%),
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 30%),
+    linear-gradient(180deg, #fcfcfd 0%, #f5f5f7 45%, #eeeeF1 100%);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 88px 0;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--dark), #2a2d33);
+  color: var(--white);
+  padding: 15px 28px;
+  box-shadow: 0 16px 35px rgba(15, 17, 21, 0.22);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 22px 44px rgba(15, 17, 21, 0.26);
+}
+
+.btn-amazon {
+  width: 100%;
+  padding: 13px 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--white);
+  font-size: 0.98rem;
+  box-shadow: 0 12px 24px rgba(10, 132, 255, 0.22);
+}
+
+.btn-amazon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px rgba(10, 132, 255, 0.28);
+}
+
+/* Hero */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  position: relative;
+  overflow: clip;
+  padding: 100px 0 60px;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(50px);
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 340px;
+  height: 340px;
+  background: rgba(10, 132, 255, 0.15);
+  top: 10%;
+  right: 8%;
+}
+
+.hero::after {
+  width: 280px;
+  height: 280px;
+  background: rgba(212, 175, 55, 0.12);
+  bottom: 10%;
+  left: 8%;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-copy p {
+  font-size: 1.12rem;
+  color: var(--text-soft);
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.hero-note {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: #5f6368;
+  font-size: 0.95rem;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 580px;
+  perspective: 1400px;
+}
+
+.floating-panel {
+  position: absolute;
+  border-radius: 28px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.floating-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.panel-main {
+  width: min(100%, 470px);
+  height: 520px;
+  right: 0;
+  top: 20px;
+}
+
+.panel-small {
+  width: 220px;
+  height: 160px;
+  left: 10px;
+  bottom: 60px;
+}
+
+.panel-badge {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  width: 220px;
+}
+
+.badge-kicker {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+
+.badge-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Products */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+  will-change: transform;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(10, 132, 255, 0.10), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.10), transparent 30%);
+  pointer-events: none;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-media {
+  aspect-ratio: 1 / 0.78;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7f8fa, #e8ebf2);
+  margin-bottom: 18px;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s ease;
+}
+
+.product-card:hover .product-media img {
+  transform: scale(1.05);
+}
+
+.product-title {
+  font-size: 1.22rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.product-desc {
+  color: var(--text-soft);
+  font-size: 0.96rem;
+  margin-bottom: 14px;
+}
+
+.features {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.features li {
+  font-size: 0.92rem;
+  color: #494c52;
+  padding-left: 18px;
+  position: relative;
+}
+
+.features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.card-bottom {
+  display: grid;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #5f6368;
+}
+
+.stars {
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+}
+
+/* Top Pick */
+.best-pick {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 34px;
+  align-items: center;
+  padding: 28px;
+  border-radius: 34px;
+  position: relative;
+  overflow: hidden;
+}
+
+.best-pick::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(212,175,55,0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(10,132,255,0.10), transparent 32%);
+  pointer-events: none;
+}
+
+.best-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #e1ba49, #cfa32a);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  box-shadow: 0 12px 26px rgba(212, 175, 55, 0.25);
+}
+
+.best-media {
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 430px;
+  box-shadow: var(--shadow-md);
+}
+
+.best-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.best-content {
+  position: relative;
+  z-index: 1;
+}
+
+.best-content h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  margin-bottom: 14px;
+}
+
+.best-content p {
+  color: var(--text-soft);
+  font-size: 1.04rem;
+  margin-bottom: 22px;
+  max-width: 640px;
+}
+
+/* Why Choose */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.why-card {
+  border-radius: 26px;
+  padding: 26px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.why-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, rgba(10,132,255,0.12), rgba(212,175,55,0.12));
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  color: var(--text-soft);
+  font-size: 0.96rem;
+}
+
+/* Pinterest Gallery */
+.gallery-grid {
+  columns: 4 220px;
+  column-gap: 18px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 18px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Disclosure */
+.disclosure {
+  text-align: center;
+  color: #676b72;
+  font-size: 0.95rem;
+  margin-top: 14px;
+}
+
+/* Footer */
+footer {
+  margin-top: 36px;
+  padding: 40px 0 60px;
+  border-top: 1px solid rgba(29, 29, 31, 0.08);
+}
+
+.footer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-brand {
+  font-size: 1rem;
+  color: #4f5358;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #4f5358;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--dark);
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
+.delay-4 { transition-delay: 0.32s; }
+.delay-5 { transition-delay: 0.40s; }
+.delay-6 { transition-delay: 0.48s; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .products-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-grid,
+  .best-pick {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 520px;
+  }
+
+  .panel-main {
+    position: relative;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .products-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 88px;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .panel-main {
+    height: 360px;
+  }
+
+  .panel-small {
+    width: 160px;
+    height: 120px;
+    left: 0;
+    bottom: 16px;
+  }
+
+  .panel-badge {
+    width: 180px;
+    top: 12px;
+  }
+
+  .best-media {
+    min-height: 300px;
+  }
+
+  .gallery-grid {
+    columns: 2 160px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+    <div class="hero-copy">
+        <p class="fade-up visible" style="text-transform:uppercase; letter-spacing:0.16em; font-size:0.78rem; color:#7b8087; margin-bottom:14px;">
+          Flagship Amazon Audio Pick
+        </p>
+        <h1 class="fade-up visible">Bedroom Decor</h1>
+        <p class="fade-up visible">
+         Adorable Companion for Little Ones – Shaped like a charming kitty, this night lamp brings playful warmth to nurseries, bedrooms, or playrooms. 
+        <div class="hero-actions fade-up visible">
+          <a href="https://www.amazon.in/gp/product/B0F48J7CCQ?th=1&linkCode=ll2&tag=ibraheemhamee-21&linkId=2c749f77f2d30545b62a1fb7aff5f526&ref_=as_li_ss_tll" class="btn btn-primary">Shop On Amazon</a>
+        </div>
+        <div class="hero-note fade-up visible">
+          <span> 	Unfinished</span>
+          <span> 	Night Light</span>
+          <span> 	Silicone</span>
+        </div>
+      </div>
+  <div class="hero-visual" id="heroVisual">
+    <div class="floating-panel panel-main glass" data-parallax="18">
+      <img src="https://m.media-amazon.com/images/I/61C8Bxjy06L._SL1500_.jpg" alt="Sony WH-1000XM5 hero setup">
+    </div>
+    <div class="floating-panel panel-small glass" data-parallax="-10">
+      <img src="https://m.media-amazon.com/images/I/51mcAG8wxVL._SL1500_.jpg" alt="Sony WH-1000XM5 lifestyle closeup">
+    </div>
+    <div class="panel-badge glass" data-parallax="12">
+      <div class="badge-kicker"><b>Desidiya</b></div>
+      <div class="badge-title">Bedroom</div>
+    </div>
+  </div>
+</div>  
+
+   </section>
+  <!-- Featured Products -->
+  <section class="section" id="featured-products">
+    <div class="container">
+      <h2 class="section-title fade-up">Featured Products</h2>
+      <p class="section-subtitle fade-up delay-1">
+        One flagship Amazon release, explored through six conversion-ready story angles.
+      </p>
+  <div class="products-grid">
+
+    <article id="product-smartwatch" class="product-card glass fade-up delay-1">
+      <div class="product-media">
+        <img src="https://m.media-amazon.com/images/I/614DbY9tQsL._SL1500_.jpg" alt="Sony WH-1000XM5 product overview">
+      </div>
+      <h3 class="product-title">Product Overview</h3>
+      <p class="product-desc">Industry-leading ANC, hi-res streaming, and 30-hour endurance make the Sony WH-1000XM5 the hero of any premium audio story.</p>
+      <ul class="features">
+        <li>8-mic system auto-calibrates to your surroundings</li>
+        <li>LDAC + DSEE Extreme upscale every stream</li>
+        <li>Quick-charge delivers 3 hours of audio in 3 minutes</li>
+      </ul>
+      <div class="card-bottom">
+        <div class="rating"><span class="stars">★★★★★</span> <span>4.8/5 rating</span></div>
+        <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-amazon">visit pinterest</a>
+      </div>
+    </article>
+
+    <article id="product-headphones" class="product-card glass fade-up delay-2">
+      <div class="product-media">
+        <img src="/home/wolf/Templates/landingpages/product4/headphone1.jpg" alt="Sony WH-1000XM5 adaptive noise canceling">
+      </div>
+      <h3 class="product-title">Key Feature: Adaptive Noise Canceling</h3>
+      <p class="product-desc">QN1 and V1 processors analyze ambient noise 5,000 times per second to hush commute chatter, airplane hum, and city rumble.</p>
+      <ul class="features">
+        <li>Auto NC Optimizer adapts to hair, glasses, and altitude</li>
+        <li>Personalized ANC tuning via Sony Headphones Connect app</li>
+        <li>Ambient mode slider keeps awareness without removing the fit</li>
+      </ul>
+      <div class="card-bottom">
+        <div class="rating"><span class="stars">★★★★★</span> <span>4.8/5 rating</span></div>
+        <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-amazon">visit pinterest</a>
+      </div>
+    </article>
+
+    <article id="product-smartphone" class="product-card glass fade-up delay-3">
+      <div class="product-media">
+        <img src="https://m.media-amazon.com/images/I/71fxZpII08L._SL1200_.jpg" alt="Sony WH-1000XM5 travel lifestyle">
+      </div>
+      <h3 class="product-title">Lifestyle Use Case: Travel Serenity</h3>
+      <p class="product-desc">Fold-flat cups and a crush-resistant case keep the WH-1000XM5 ready for long-haul flights, focus sprints, and commuter calm.</p>
+      <ul class="features">
+        <li>Carry-ready case slides beside tablets and novels</li>
+        <li>Speak-to-Chat pauses audio when ordering coffee</li>
+        <li>Adaptive Sound Control learns lounge, gate, and office zones</li>
+      </ul>
+      <div class="card-bottom">
+        <div class="rating"><span class="stars">★★★★★</span> <span>4.8/5 rating</span></div>
+        <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-amazon">visit pinterest</a>
+      </div>
+    </article>
+
+    <article id="product-laptop" class="product-card glass fade-up delay-4">
+      <div class="product-media">
+        <img src="https://m.media-amazon.com/images/I/612-Tfh2CgL._SL1500_.jpg" alt="Sony WH-1000XM5 design highlight">
+      </div>
+      <h3 class="product-title">Noise Master Buds Max</h3>
+      <p class="product-desc">Noise Master Buds Max, Sound by Bose Wireless Over-Ear Headphones, Adaptive ANC, LHDC 5.0, Immersive Spatial Audio,Upto 60H Playtime, Fast Pairing, Wear...</p>
+      <ul class="features">
+        <li>PERFUME</li>
+        <li>Sound by Bose Wireless Over-Ear Headphones</li>
+        <li>Fast Pairing</li>
+      </ul>
+      <div class="card-bottom">
+        <div class="rating"><span class="stars">★★★★★</span> <span>4.8/5 rating</span></div>
+        <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-amazon">visit pinterest</a>
+      </div>
+    </article>
+
+    <article id="product-skincare" class="product-card glass fade-up delay-5">
+      <div class="product-media">
+        <img src="https://m.media-amazon.com/images/I/713+MF1y1CL._SL1500_.jpg" alt="Sony WH-1000XM5 customer favorite feature">
+      </div>
+      <h3 class="product-title">Royal Princess Oud.</h3>
+      <p class="product-desc">Creed Royal Princess Oud Millesime Spray for Women, 2.5 Ounce.</p>
+      <ul class="features">
+        <li>PERFUME </li>
+        <li>-12% ₹87,500.</li>
+        <li>Inspired by a drawing from Henry Creed II's sketchbook</li>
+      </ul>
+      <div class="card-bottom">
+        <div class="rating"><span class="stars">★★★★★</span></div>
+        <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-amazon">visit pinterest</a>
+      </div>
+    </article>
+
+    <article id="product-desk" class="product-card glass fade-up delay-6">
+      <div class="product-media">
+        <img src="/home/wolf/Templates/landingpages/product2/2(3333).jpg" alt="Sony WH-1000XM5 value proposition">
+      </div>
+      <h3 class="product-title">RASASI Wood Hawas M Cologne Spray.</h3>
+      <p class="product-desc"> RASASI Wood Hawas M Cologne Spray For Men, 100 Ml.</p>
+      <ul class="features">
+        <li>PERFUME</li>
+        <li>Cinnamon and Marine </li>
+        <li>Bergamot and Orange blossom</li>
+      </ul>
+      <div class="card-bottom">
+        <div class="rating"><span class="stars">RASASI</span> </div>
+        <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-amazon">visit pinterest</a>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+  </section>
+  <!-- Best Product Highlight -->
+  <section class="section">
+    <div class="container">
+      <div class="best-pick glass fade-up">
+        <div class="best-media">
+          <img src="https://m.media-amazon.com/images/I/71fxZpII08L._SL1200_.jpg" alt="Sony WH-1000XM5 best pick display">
+        </div>
+        <div class="best-content">
+          <span class="best-badge">★ Best Choice</span>
+          <h2>Sheaffer 9322 Ballpoint Pen</h2>
+          <p>
+             Sheaffer 9322 Ballpoint Pen With Gold Chrome Table Clock.
+          </p>
+          <a href="https://in.pinterest.com/ibraheemhameed3450/" class="btn btn-primary">visit pinterest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Pinterest Optimized Gallery -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-up">Pinterest Optimized Gallery</h2>
+      <p class="section-subtitle fade-up delay-1">
+        A vertical visual grid showing the WH-1000XM5 in design-forward spaces, perfect for Pinterest saves and clicks.
+      </p>
+  <div class="gallery-grid fade-up delay-2">
+    <div class="gallery-item"><img src="https://m.media-amazon.com/images/I/71fxZpII08L._SL1200_.jpg" alt="Sony WH-1000XM5 styled with modern blazer"></div>
+    <div class="gallery-item"><img src="https://m.media-amazon.com/images/I/612-Tfh2CgL._SL1500_.jpg" alt="Relaxed listening with Sony WH-1000XM5 on sofa"></div>
+    <div class="gallery-item"><img src="https://m.media-amazon.com/images/I/713+MF1y1CL._SL1500_.jpg" alt="Travel-ready Sony WH-1000XM5 at airport window"></div>
+    <div class="gallery-item"><img src="https://m.media-amazon.com/images/I/612-Tfh2CgL._SL1500_.jpg" alt="Creator editing while wearing Sony WH-1000XM5"></div>
+    <div class="gallery-item"><img src="https://m.media-amazon.com/images/I/71fxZpII08L._SL1200_.jpg" alt="Detail shot of Sony WH-1000XM5 earcups"></div>
+    <div class="gallery-item"><img src="https://m.media-amazon.com/images/I/517JLnQqF2L._SL1500_.jpg" alt="Sony WH-1000XM5 staged on marble workspace"></div>
+  </div>
+</div>
+
+  </section>
+  <!-- Affiliate Disclosure -->
+  <section class="section" style="padding-top: 10px; padding-bottom: 24px;">
+    <div class="container">
+      <p class="disclosure fade-up">As an Amazon Associate I earn from qualifying purchases.</p>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-wrap">
+      <div class="footer-brand">© 2026 Luxury Picks. Curated with taste and a suspiciously strong appreciation for clean gradients.</div>
+      <nav class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Affiliate Disclosure</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    // Fade-up on scroll
+    const animatedEls = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    animatedEls.forEach(el => observer.observe(el));
+
+    // Subtle hero parallax
+    const heroVisual = document.getElementById('heroVisual');
+    const parallaxItems = heroVisual.querySelectorAll('[data-parallax]');
+
+    heroVisual.addEventListener('mousemove', (e) => {
+      const rect = heroVisual.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const moveX = (x - centerX) / centerX;
+      const moveY = (y - centerY) / centerY;
+
+      parallaxItems.forEach(item => {
+        const depth = parseFloat(item.dataset.parallax) || 10;
+        item.style.transform = `translate3d(${moveX * depth}px, ${moveY * depth}px, 0)`;
+      });
+    });
+
+    heroVisual.addEventListener('mouseleave', () => {
+      parallaxItems.forEach(item => {
+        item.style.transform = 'translate3d(0,0,0)';
+      });
+    });
+
+    // Optional product-card tilt
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+        const rotateX = ((y / rect.height) - 0.5) * -8;
+        card.style.transform = `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  </script>
+</body>
+</html>
